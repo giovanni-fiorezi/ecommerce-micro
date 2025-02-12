@@ -2,6 +2,8 @@ package br.com.projeto.ecommerce.service;
 
 import br.com.projeto.ecommerce.dto.ProductDto;
 import br.com.projeto.ecommerce.enums.ProductCategory;
+import br.com.projeto.ecommerce.exceptions.InvalidProductException;
+import br.com.projeto.ecommerce.exceptions.ProductNotFoundException;
 import br.com.projeto.ecommerce.mapper.ProductMapper;
 import br.com.projeto.ecommerce.models.Product;
 import br.com.projeto.ecommerce.repository.ProductRepository;
@@ -29,39 +31,26 @@ public class ProductService {
     }
 
     public List<ProductDto> findAll() {
-        try {
-            List<Product> products = productRepository.findAll();
-            return ProductMapper.INSTANCE.toDtoList(products);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Erro ao buscar todos os produtos!");
-        }
+        List<Product> products = productRepository.findAll();
+        return ProductMapper.INSTANCE.toDtoList(products);
     }
 
     public List<ProductDto> findProductsByCategory(ProductCategory productCategory) {
-        try {
-            List<Product> products = productRepository.findAll();
-            return products.stream()
-                    .filter(product -> product.getProductCategory().equals(productCategory))
-                    .map(ProductMapper.INSTANCE::toDto)
-                    .collect(Collectors.toList());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Erro ao buscar os produtos!");
-        }
+        List<Product> productsByCategory = productRepository.findByProductCategory(productCategory);
+        return ProductMapper.INSTANCE.toDtoList(productsByCategory);
     }
 
     public ProductDto findById(Long id) {
         return productRepository.findById(id)
                 .map(ProductMapper.INSTANCE::toDto)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado com ID: " + id));
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado com ID: " + id));
     }
 
     @Transactional(rollbackFor = Exception.class)
     public void saveProduct(ProductDto dto) {
         try {
             if(dto == null) {
-                throw new RuntimeException("Insira os dados do produto!");
+                throw new InvalidProductException("Insira os dados do produto!");
             }
             Product product = ProductMapper.INSTANCE.toEntity(dto);
             productRepository.save(product);
@@ -77,7 +66,7 @@ public class ProductService {
         }
 
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found with ID " + id));
+                .orElseThrow(() -> new InvalidProductException("Product not found with ID " + id));
 
         try {
             ProductMapper.INSTANCE.updateEntityFromDto(dto, product);
@@ -96,7 +85,7 @@ public class ProductService {
         }
 
         Product product = productRepository.findById(id).orElseThrow(() ->
-                new RuntimeException("Produto não encontrado com ID: " + id));
+                new InvalidProductException("Produto não encontrado com ID: " + id));
 
         productRepository.delete(product);
     }
