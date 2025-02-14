@@ -1,6 +1,6 @@
 package br.com.projeto.ecommerce.dto;
 
-import br.com.projeto.ecommerce.enums.StatusPayment;
+import br.com.projeto.ecommerce.enums.StatusOrder;
 import br.com.projeto.ecommerce.models.OrderItem;
 import br.com.projeto.ecommerce.models.User;
 import jakarta.persistence.*;
@@ -18,7 +18,7 @@ public class OrderDto {
     private BigDecimal totalAmount;
 
     @Enumerated(EnumType.STRING)
-    private StatusPayment status;
+    private StatusOrder status;
 
     private User user;
 

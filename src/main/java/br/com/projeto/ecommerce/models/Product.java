@@ -2,8 +2,6 @@ package br.com.projeto.ecommerce.models;
 
 import br.com.projeto.ecommerce.enums.ProductCategory;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Objects;

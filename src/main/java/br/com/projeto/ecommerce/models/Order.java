@@ -1,6 +1,6 @@
 package br.com.projeto.ecommerce.models;
 
-import br.com.projeto.ecommerce.enums.StatusPayment;
+import br.com.projeto.ecommerce.enums.StatusOrder;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public class Order {
     private BigDecimal totalAmount;
 
     @Enumerated(EnumType.STRING)
-    private StatusPayment status;
+    private StatusOrder status;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
