@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e659037-05be-4ede-8bb1-4a89335f5f00" name="Changes" comment="criação do carrinho de compras ok." />
+    <list default="true" id="1e659037-05be-4ede-8bb1-4a89335f5f00" name="Changes" comment="criação do carrinho de compras ok.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/config/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/models/CarItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/models/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/repository/CarItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/repository/ShoppingCartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/request/ShoppingCartRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ShoppingCartResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ShoppingCartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/config/KafkaConsumerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/dto/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/dto/ProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/mapper/ModelMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/models/CarItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/models/ShoppingCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/repository/CarItemRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/repository/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/repository/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/repository/ShoppingCartRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/request/ShoppingCartRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/resource/ProductResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/resource/ProductResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/resource/ShoppingCartResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/service/ShoppingCartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/projeto/ecommerce/service/UserService.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +51,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -25,7 +62,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -59,18 +96,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2E8EdFKBoDkGqGRzh9TBBBEbe2k" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -82,7 +112,11 @@
     "Application.Application.executor": "Run",
     "Maven.br.com.projeto [clean].executor": "Run",
     "Maven.br.com.projeto [install].executor": "Run",
+    "Maven.ecommerce [clean,compile].executor": "Run",
+    "Maven.ecommerce [clean,install].executor": "Run",
     "Maven.ecommerce [clean].executor": "Run",
+    "Maven.ecommerce [compile].executor": "Run",
+    "Maven.ecommerce [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -103,7 +137,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15625",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "MavenSettings",
     "spring.configuration.checksum": "3f0089d8663274d3a58816b06e7fb9cb",
     "vue.rearranger.settings.migration": "true"
   },
@@ -438,6 +472,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="Inserindo classes, atributos e fazendo os mapeamentos." />
     <MESSAGE value="Refatoração dos nomes de algumas classes, mudança no escopo de entidades para enums e criação de uma nova pasta de enums para segregar as implementações." />
     <MESSAGE value="CRUD de Produtos finalizado e testado." />
@@ -472,63 +509,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java</url>
-          <line>33</line>
+          <line>34</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java</url>
-          <line>103</line>
+          <line>96</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
-          <line>71</line>
+          <line>73</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
-          <line>27</line>
+          <line>29</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
-          <line>65</line>
+          <line>67</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java</url>
-          <line>90</line>
+          <line>83</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ProductService.java</url>
-          <line>71</line>
+          <line>64</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
-          <line>52</line>
+          <line>54</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ShoppingCartResource.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/service/ShoppingCartService.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/projeto/ecommerce/resource/ProductResource.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

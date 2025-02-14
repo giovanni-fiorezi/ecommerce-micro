@@ -19,30 +19,31 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final ProductMapper productMapper;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, ProductMapper productMapper) {
         this.productRepository = productRepository;
+        this.productMapper = productMapper;
     }
 
     public List<ProductDto> findAll() {
         List<Product> products = productRepository.findAll();
-        return ProductMapper.INSTANCE.toDtoList(products);
+        return productMapper.toDtoList(products);
     }
 
     public List<ProductDto> findProductsByCategory(ProductCategory productCategory) {
         List<Product> productsByCategory = productRepository.findByProductCategory(productCategory);
-        return ProductMapper.INSTANCE.toDtoList(productsByCategory);
+        return productMapper.toDtoList(productsByCategory);
     }
 
     public ProductDto findById(Long id) {
         return productRepository.findById(id)
-                .map(ProductMapper.INSTANCE::toDto)
+                .map(productMapper::toDto)
                 .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado com ID: " + id));
     }
 
@@ -52,7 +53,7 @@ public class ProductService {
             if(dto == null) {
                 throw new InvalidProductException("Insira os dados do produto!");
             }
-            Product product = ProductMapper.INSTANCE.toEntity(dto);
+            Product product = productMapper.toEntity(dto);
             productRepository.save(product);
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,9 +70,9 @@ public class ProductService {
                 .orElseThrow(() -> new InvalidProductException("Product not found with ID " + id));
 
         try {
-            ProductMapper.INSTANCE.updateEntityFromDto(dto, product);
+            productMapper.updateEntityFromDto(dto, product);
             Product updateProduct = productRepository.save(product);
-            return ProductMapper.INSTANCE.toDto(updateProduct);
+            return productMapper.toDto(updateProduct);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Erro ao atualizar o produto") ;
@@ -107,7 +108,7 @@ public class ProductService {
                 dto.setAmount((int) row.getCell(3).getNumericCellValue());
                 dto.setPrice(BigDecimal.valueOf(row.getCell(4).getNumericCellValue()));
 
-                Product product = ProductMapper.INSTANCE.toEntity(dto);
+                Product product = productMapper.toEntity(dto);
                 productRepository.save(product);
             }
         } catch (Exception e) {

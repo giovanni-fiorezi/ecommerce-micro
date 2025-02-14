@@ -11,20 +11,22 @@ import java.util.List;
  * Classe responsável por fazer a conversão de uma Entidade em VO e vice-versa
  */
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
+    @Named("toDto")
     ProductDto toDto(Product product);
 
+    @Named("toEntity")
     Product toEntity(ProductDto dto);
 
+    @Named("toDtoList")
+    @IterableMapping(qualifiedByName = "toDto")
     List<ProductDto> toDtoList(List<Product> productList);
-
-    List<Product> toEntityList(List<ProductDto> productDtoList);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateEntityFromDto(ProductDto dto, @MappingTarget Product product);
-
 }
+

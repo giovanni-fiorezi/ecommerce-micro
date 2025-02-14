@@ -18,9 +18,11 @@ import java.util.List;
 public class ProductResource {
 
     private final ProductService productService;
+    private final ProductMapper productMapper;
 
-    public ProductResource(ProductService productService) {
+    public ProductResource(ProductService productService, ProductMapper productMapper) {
         this.productService = productService;
+        this.productMapper = productMapper;
     }
 
     @GetMapping
@@ -51,7 +53,7 @@ public class ProductResource {
     public ResponseEntity<Product> updateProduct(@RequestBody ProductDto dto, @PathVariable Long productId) {
         try {
             ProductDto updatedProduct = productService.updateProduct(dto, productId);
-            Product product = ProductMapper.INSTANCE.toEntity(updatedProduct);
+            Product product = productMapper.toEntity(updatedProduct);
             return ResponseEntity.status(HttpStatus.OK).body(product);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
