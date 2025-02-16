@@ -59,6 +59,8 @@ public class OrderService {
         orderRepository.save(order);
         order.setStatus(StatusOrder.PENDING);
         return order;
+
+        //Todo -> fazer cálculo para somar todos os itens do carrinho
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -82,6 +84,8 @@ public class OrderService {
         order.setStatus(StatusOrder.CANCELED);
         return "O seu pedido foi cancelado";
     }
+
+
 
 
 }
