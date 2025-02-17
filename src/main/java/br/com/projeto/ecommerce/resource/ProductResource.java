@@ -2,6 +2,7 @@ package br.com.projeto.ecommerce.resource;
 
 import br.com.projeto.ecommerce.dto.ProductDto;
 import br.com.projeto.ecommerce.enums.ProductCategory;
+import br.com.projeto.ecommerce.mapper.ProductMapper;
 import br.com.projeto.ecommerce.models.Product;
 import br.com.projeto.ecommerce.service.ProductService;
 import org.springframework.http.HttpStatus;
@@ -17,9 +18,11 @@ import java.util.List;
 public class ProductResource {
 
     private final ProductService productService;
+    private final ProductMapper productMapper;
 
-    public ProductResource(ProductService productService) {
+    public ProductResource(ProductService productService, ProductMapper productMapper) {
         this.productService = productService;
+        this.productMapper = productMapper;
     }
 
     @GetMapping
@@ -49,8 +52,9 @@ public class ProductResource {
     @PutMapping("/{productId}")
     public ResponseEntity<Product> updateProduct(@RequestBody ProductDto dto, @PathVariable Long productId) {
         try {
-            Product updatedProduct = productService.updateProduct(dto, productId);
-            return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);
+            ProductDto updatedProduct = productService.updateProduct(dto, productId);
+            Product product = productMapper.toEntity(updatedProduct);
+            return ResponseEntity.status(HttpStatus.OK).body(product);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (Exception e) {
