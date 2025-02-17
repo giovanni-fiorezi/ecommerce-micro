@@ -6,9 +6,11 @@ import br.com.projeto.ecommerce.exceptions.InvalidOrderException;
 import br.com.projeto.ecommerce.mapper.OrderMapper;
 import br.com.projeto.ecommerce.models.Order;
 import br.com.projeto.ecommerce.repository.OrderRepository;
+import br.com.projeto.ecommerce.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -16,10 +18,12 @@ import java.util.stream.Collectors;
 @Service
 public class OrderService {
 
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
+    private final UserRepository userRepository;
 
-    public OrderService(OrderRepository orderRepository) {
+    public OrderService(OrderRepository orderRepository, UserRepository userRepository) {
         this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
     }
 
     public List<OrderDto> findAllOrders() {
@@ -55,12 +59,18 @@ public class OrderService {
             throw new IllegalArgumentException("Body of order not be null");
         }
 
-        Order order = OrderMapper.INSTANCE.toEntity(dto);
-        orderRepository.save(order);
-        order.setStatus(StatusOrder.PENDING);
-        return order;
 
-        //Todo -> fazer cálculo para somar todos os itens do carrinho
+        Order order = OrderMapper.INSTANCE.toEntity(dto);
+
+        BigDecimal totalPrice = order.getItems().stream()
+                .map(item -> item.getUnitPrice().multiply(BigDecimal.valueOf(item.getQuantity())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        order.setTotalAmount(totalPrice);
+        order.setStatus(StatusOrder.PENDING);
+
+        orderRepository.save(order);
+        return order;
     }
 
     @Transactional(rollbackFor = Exception.class)
